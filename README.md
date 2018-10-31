@@ -8,3 +8,6 @@ Another flow has ListenHTTP which then decompresses payload, merge content (to m
 
 NiFi_Benchmark <br>
 Workflow designed to benchmark your cluster.  If you want push your cluster limits add more activity (processors) to the template
+
+Log_Parsing.xml <br>
+Workflow designed to ingest unstructured logs (ie windows) and parse them via grok.  The output of the parsing is a json structure which can be sinked to virtually any target.
