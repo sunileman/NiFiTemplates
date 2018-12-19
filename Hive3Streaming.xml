@@ -1,0 +1,657 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<template encoding-version="1.2">
+    <description></description>
+    <groupId>7c84501d-d10c-407c-b9f3-1d80e38fe36a</groupId>
+    <name>Hive3Streaming</name>
+    <snippet>
+        <processGroups>
+            <id>c1afea63-a09a-3d5a-0000-000000000000</id>
+            <parentGroupId>46f95fe5-3024-31d8-0000-000000000000</parentGroupId>
+            <position>
+                <x>0.0</x>
+                <y>0.0</y>
+            </position>
+            <comments></comments>
+            <contents>
+                <connections>
+                    <id>6423b71c-79e9-30c6-0000-000000000000</id>
+                    <parentGroupId>c1afea63-a09a-3d5a-0000-000000000000</parentGroupId>
+                    <backPressureDataSizeThreshold>1 GB</backPressureDataSizeThreshold>
+                    <backPressureObjectThreshold>10000</backPressureObjectThreshold>
+                    <destination>
+                        <groupId>c1afea63-a09a-3d5a-0000-000000000000</groupId>
+                        <id>317e948a-bc55-3ac0-0000-000000000000</id>
+                        <type>PROCESSOR</type>
+                    </destination>
+                    <flowFileExpiration>0 sec</flowFileExpiration>
+                    <labelIndex>1</labelIndex>
+                    <name></name>
+                    <selectedRelationships>success</selectedRelationships>
+                    <source>
+                        <groupId>c1afea63-a09a-3d5a-0000-000000000000</groupId>
+                        <id>21dfddd6-2e75-3afb-0000-000000000000</id>
+                        <type>PROCESSOR</type>
+                    </source>
+                    <zIndex>0</zIndex>
+                </connections>
+                <connections>
+                    <id>67fc4a33-0543-3216-0000-000000000000</id>
+                    <parentGroupId>c1afea63-a09a-3d5a-0000-000000000000</parentGroupId>
+                    <backPressureDataSizeThreshold>1 GB</backPressureDataSizeThreshold>
+                    <backPressureObjectThreshold>10000</backPressureObjectThreshold>
+                    <destination>
+                        <groupId>c1afea63-a09a-3d5a-0000-000000000000</groupId>
+                        <id>ee023c27-50bd-3854-0000-000000000000</id>
+                        <type>PROCESSOR</type>
+                    </destination>
+                    <flowFileExpiration>0 sec</flowFileExpiration>
+                    <labelIndex>1</labelIndex>
+                    <name></name>
+                    <selectedRelationships>success</selectedRelationships>
+                    <source>
+                        <groupId>c1afea63-a09a-3d5a-0000-000000000000</groupId>
+                        <id>e9529dc6-5b07-3384-0000-000000000000</id>
+                        <type>PROCESSOR</type>
+                    </source>
+                    <zIndex>0</zIndex>
+                </connections>
+                <connections>
+                    <id>857d0742-dd0d-38b5-0000-000000000000</id>
+                    <parentGroupId>c1afea63-a09a-3d5a-0000-000000000000</parentGroupId>
+                    <backPressureDataSizeThreshold>1 GB</backPressureDataSizeThreshold>
+                    <backPressureObjectThreshold>10000</backPressureObjectThreshold>
+                    <destination>
+                        <groupId>c1afea63-a09a-3d5a-0000-000000000000</groupId>
+                        <id>e9529dc6-5b07-3384-0000-000000000000</id>
+                        <type>PROCESSOR</type>
+                    </destination>
+                    <flowFileExpiration>0 sec</flowFileExpiration>
+                    <labelIndex>1</labelIndex>
+                    <name></name>
+                    <selectedRelationships>success</selectedRelationships>
+                    <source>
+                        <groupId>c1afea63-a09a-3d5a-0000-000000000000</groupId>
+                        <id>317e948a-bc55-3ac0-0000-000000000000</id>
+                        <type>PROCESSOR</type>
+                    </source>
+                    <zIndex>0</zIndex>
+                </connections>
+                <controllerServices>
+                    <id>57474429-c8f2-3b1a-0000-000000000000</id>
+                    <parentGroupId>c1afea63-a09a-3d5a-0000-000000000000</parentGroupId>
+                    <bundle>
+                        <artifact>nifi-record-serialization-services-nar</artifact>
+                        <group>org.apache.nifi</group>
+                        <version>1.7.0.3.2.0.0-520</version>
+                    </bundle>
+                    <comments></comments>
+                    <descriptors>
+                        <entry>
+                            <key>schema-access-strategy</key>
+                            <value>
+<name>schema-access-strategy</name>
+                            </value>
+                        </entry>
+                        <entry>
+                            <key>schema-registry</key>
+                            <value>
+<identifiesControllerService>org.apache.nifi.schemaregistry.services.SchemaRegistry</identifiesControllerService>
+<name>schema-registry</name>
+                            </value>
+                        </entry>
+                        <entry>
+                            <key>schema-name</key>
+                            <value>
+<name>schema-name</name>
+                            </value>
+                        </entry>
+                        <entry>
+                            <key>schema-version</key>
+                            <value>
+<name>schema-version</name>
+                            </value>
+                        </entry>
+                        <entry>
+                            <key>schema-branch</key>
+                            <value>
+<name>schema-branch</name>
+                            </value>
+                        </entry>
+                        <entry>
+                            <key>schema-text</key>
+                            <value>
+<name>schema-text</name>
+                            </value>
+                        </entry>
+                    </descriptors>
+                    <name>AvroReader</name>
+                    <persistsState>false</persistsState>
+                    <properties>
+                        <entry>
+                            <key>schema-access-strategy</key>
+                        </entry>
+                        <entry>
+                            <key>schema-registry</key>
+                        </entry>
+                        <entry>
+                            <key>schema-name</key>
+                        </entry>
+                        <entry>
+                            <key>schema-version</key>
+                        </entry>
+                        <entry>
+                            <key>schema-branch</key>
+                        </entry>
+                        <entry>
+                            <key>schema-text</key>
+                        </entry>
+                    </properties>
+                    <state>ENABLED</state>
+                    <type>org.apache.nifi.avro.AvroReader</type>
+                </controllerServices>
+                <processors>
+                    <id>21dfddd6-2e75-3afb-0000-000000000000</id>
+                    <parentGroupId>c1afea63-a09a-3d5a-0000-000000000000</parentGroupId>
+                    <position>
+                        <x>242.33164338474535</x>
+                        <y>-96.99217860172168</y>
+                    </position>
+                    <bundle>
+                        <artifact>nifi-standard-nar</artifact>
+                        <group>org.apache.nifi</group>
+                        <version>1.7.0.3.2.0.0-520</version>
+                    </bundle>
+                    <config>
+                        <bulletinLevel>WARN</bulletinLevel>
+                        <comments></comments>
+                        <concurrentlySchedulableTaskCount>1</concurrentlySchedulableTaskCount>
+                        <descriptors>
+                            <entry>
+<key>File Size</key>
+<value>
+    <name>File Size</name>
+</value>
+                            </entry>
+                            <entry>
+<key>Batch Size</key>
+<value>
+    <name>Batch Size</name>
+</value>
+                            </entry>
+                            <entry>
+<key>Data Format</key>
+<value>
+    <name>Data Format</name>
+</value>
+                            </entry>
+                            <entry>
+<key>Unique FlowFiles</key>
+<value>
+    <name>Unique FlowFiles</name>
+</value>
+                            </entry>
+                            <entry>
+<key>generate-ff-custom-text</key>
+<value>
+    <name>generate-ff-custom-text</name>
+</value>
+                            </entry>
+                            <entry>
+<key>character-set</key>
+<value>
+    <name>character-set</name>
+</value>
+                            </entry>
+                        </descriptors>
+                        <executionNode>ALL</executionNode>
+                        <lossTolerant>false</lossTolerant>
+                        <penaltyDuration>30 sec</penaltyDuration>
+                        <properties>
+                            <entry>
+<key>File Size</key>
+<value>0B</value>
+                            </entry>
+                            <entry>
+<key>Batch Size</key>
+<value>1</value>
+                            </entry>
+                            <entry>
+<key>Data Format</key>
+<value>Text</value>
+                            </entry>
+                            <entry>
+<key>Unique FlowFiles</key>
+<value>false</value>
+                            </entry>
+                            <entry>
+<key>generate-ff-custom-text</key>
+<value>{"name": "sunile","age": "21","location": "houston"}</value>
+                            </entry>
+                            <entry>
+<key>character-set</key>
+<value>UTF-8</value>
+                            </entry>
+                        </properties>
+                        <runDurationMillis>0</runDurationMillis>
+                        <schedulingPeriod>60 sec</schedulingPeriod>
+                        <schedulingStrategy>TIMER_DRIVEN</schedulingStrategy>
+                        <yieldDuration>1 sec</yieldDuration>
+                    </config>
+                    <executionNodeRestricted>false</executionNodeRestricted>
+                    <name>GenerateFlowFile</name>
+                    <relationships>
+                        <autoTerminate>false</autoTerminate>
+                        <name>success</name>
+                    </relationships>
+                    <state>STOPPED</state>
+                    <style/>
+                    <type>org.apache.nifi.processors.standard.GenerateFlowFile</type>
+                </processors>
+                <processors>
+                    <id>317e948a-bc55-3ac0-0000-000000000000</id>
+                    <parentGroupId>c1afea63-a09a-3d5a-0000-000000000000</parentGroupId>
+                    <position>
+                        <x>899.3162812753827</x>
+                        <y>-99.09950159142326</y>
+                    </position>
+                    <bundle>
+                        <artifact>nifi-kite-nar</artifact>
+                        <group>org.apache.nifi</group>
+                        <version>1.7.0.3.2.0.0-520</version>
+                    </bundle>
+                    <config>
+                        <bulletinLevel>WARN</bulletinLevel>
+                        <comments></comments>
+                        <concurrentlySchedulableTaskCount>1</concurrentlySchedulableTaskCount>
+                        <descriptors>
+                            <entry>
+<key>Schema Output Destination</key>
+<value>
+    <name>Schema Output Destination</name>
+</value>
+                            </entry>
+                            <entry>
+<key>Input Content Type</key>
+<value>
+    <name>Input Content Type</name>
+</value>
+                            </entry>
+                            <entry>
+<key>CSV Header Definition</key>
+<value>
+    <name>CSV Header Definition</name>
+</value>
+                            </entry>
+                            <entry>
+<key>Get CSV Header Definition From Data</key>
+<value>
+    <name>Get CSV Header Definition From Data</name>
+</value>
+                            </entry>
+                            <entry>
+<key>CSV Header Line Skip Count</key>
+<value>
+    <name>CSV Header Line Skip Count</name>
+</value>
+                            </entry>
+                            <entry>
+<key>CSV delimiter</key>
+<value>
+    <name>CSV delimiter</name>
+</value>
+                            </entry>
+                            <entry>
+<key>CSV Escape String</key>
+<value>
+    <name>CSV Escape String</name>
+</value>
+                            </entry>
+                            <entry>
+<key>CSV Quote String</key>
+<value>
+    <name>CSV Quote String</name>
+</value>
+                            </entry>
+                            <entry>
+<key>Pretty Avro Output</key>
+<value>
+    <name>Pretty Avro Output</name>
+</value>
+                            </entry>
+                            <entry>
+<key>Avro Record Name</key>
+<value>
+    <name>Avro Record Name</name>
+</value>
+                            </entry>
+                            <entry>
+<key>Number Of Records To Analyze</key>
+<value>
+    <name>Number Of Records To Analyze</name>
+</value>
+                            </entry>
+                            <entry>
+<key>Charset</key>
+<value>
+    <name>Charset</name>
+</value>
+                            </entry>
+                        </descriptors>
+                        <executionNode>ALL</executionNode>
+                        <lossTolerant>false</lossTolerant>
+                        <penaltyDuration>30 sec</penaltyDuration>
+                        <properties>
+                            <entry>
+<key>Schema Output Destination</key>
+<value>flowfile-attribute</value>
+                            </entry>
+                            <entry>
+<key>Input Content Type</key>
+<value>json</value>
+                            </entry>
+                            <entry>
+<key>CSV Header Definition</key>
+                            </entry>
+                            <entry>
+<key>Get CSV Header Definition From Data</key>
+<value>false</value>
+                            </entry>
+                            <entry>
+<key>CSV Header Line Skip Count</key>
+<value>0</value>
+                            </entry>
+                            <entry>
+<key>CSV delimiter</key>
+<value>,</value>
+                            </entry>
+                            <entry>
+<key>CSV Escape String</key>
+<value>\</value>
+                            </entry>
+                            <entry>
+<key>CSV Quote String</key>
+<value>'</value>
+                            </entry>
+                            <entry>
+<key>Pretty Avro Output</key>
+<value>true</value>
+                            </entry>
+                            <entry>
+<key>Avro Record Name</key>
+<value>mydata</value>
+                            </entry>
+                            <entry>
+<key>Number Of Records To Analyze</key>
+<value>10</value>
+                            </entry>
+                            <entry>
+<key>Charset</key>
+<value>UTF-8</value>
+                            </entry>
+                        </properties>
+                        <runDurationMillis>0</runDurationMillis>
+                        <schedulingPeriod>0 sec</schedulingPeriod>
+                        <schedulingStrategy>TIMER_DRIVEN</schedulingStrategy>
+                        <yieldDuration>1 sec</yieldDuration>
+                    </config>
+                    <executionNodeRestricted>false</executionNodeRestricted>
+                    <name>InferAvroSchema</name>
+                    <relationships>
+                        <autoTerminate>true</autoTerminate>
+                        <name>failure</name>
+                    </relationships>
+                    <relationships>
+                        <autoTerminate>true</autoTerminate>
+                        <name>original</name>
+                    </relationships>
+                    <relationships>
+                        <autoTerminate>false</autoTerminate>
+                        <name>success</name>
+                    </relationships>
+                    <relationships>
+                        <autoTerminate>true</autoTerminate>
+                        <name>unsupported content</name>
+                    </relationships>
+                    <state>STOPPED</state>
+                    <style/>
+                    <type>org.apache.nifi.processors.kite.InferAvroSchema</type>
+                </processors>
+                <processors>
+                    <id>e9529dc6-5b07-3384-0000-000000000000</id>
+                    <parentGroupId>c1afea63-a09a-3d5a-0000-000000000000</parentGroupId>
+                    <position>
+                        <x>1581.1963937619585</x>
+                        <y>-95.14830869154012</y>
+                    </position>
+                    <bundle>
+                        <artifact>nifi-kite-nar</artifact>
+                        <group>org.apache.nifi</group>
+                        <version>1.7.0.3.2.0.0-520</version>
+                    </bundle>
+                    <config>
+                        <bulletinLevel>WARN</bulletinLevel>
+                        <comments></comments>
+                        <concurrentlySchedulableTaskCount>1</concurrentlySchedulableTaskCount>
+                        <descriptors>
+                            <entry>
+<key>Hadoop configuration files</key>
+<value>
+    <name>Hadoop configuration files</name>
+</value>
+                            </entry>
+                            <entry>
+<key>Record schema</key>
+<value>
+    <name>Record schema</name>
+</value>
+                            </entry>
+                            <entry>
+<key>kite-compression-type</key>
+<value>
+    <name>kite-compression-type</name>
+</value>
+                            </entry>
+                        </descriptors>
+                        <executionNode>ALL</executionNode>
+                        <lossTolerant>false</lossTolerant>
+                        <penaltyDuration>30 sec</penaltyDuration>
+                        <properties>
+                            <entry>
+<key>Hadoop configuration files</key>
+<value>/home/nifi/old_sites/core-site.xml,/home/nifi/sites/hdfs-site.xml</value>
+                            </entry>
+                            <entry>
+<key>Record schema</key>
+<value>${inferred.avro.schema}</value>
+                            </entry>
+                            <entry>
+<key>kite-compression-type</key>
+<value>NONE</value>
+                            </entry>
+                        </properties>
+                        <runDurationMillis>0</runDurationMillis>
+                        <schedulingPeriod>0 sec</schedulingPeriod>
+                        <schedulingStrategy>TIMER_DRIVEN</schedulingStrategy>
+                        <yieldDuration>1 sec</yieldDuration>
+                    </config>
+                    <executionNodeRestricted>false</executionNodeRestricted>
+                    <name>ConvertJSONToAvro</name>
+                    <relationships>
+                        <autoTerminate>true</autoTerminate>
+                        <name>failure</name>
+                    </relationships>
+                    <relationships>
+                        <autoTerminate>true</autoTerminate>
+                        <name>incompatible</name>
+                    </relationships>
+                    <relationships>
+                        <autoTerminate>false</autoTerminate>
+                        <name>success</name>
+                    </relationships>
+                    <state>STOPPED</state>
+                    <style/>
+                    <type>org.apache.nifi.processors.kite.ConvertJSONToAvro</type>
+                </processors>
+                <processors>
+                    <id>ee023c27-50bd-3854-0000-000000000000</id>
+                    <parentGroupId>c1afea63-a09a-3d5a-0000-000000000000</parentGroupId>
+                    <position>
+                        <x>1688.2792358398438</x>
+                        <y>195.3497772216797</y>
+                    </position>
+                    <bundle>
+                        <artifact>nifi-hive3-nar</artifact>
+                        <group>org.apache.nifi</group>
+                        <version>1.7.0.3.2.0.0-520</version>
+                    </bundle>
+                    <config>
+                        <bulletinLevel>WARN</bulletinLevel>
+                        <comments></comments>
+                        <concurrentlySchedulableTaskCount>1</concurrentlySchedulableTaskCount>
+                        <descriptors>
+                            <entry>
+<key>record-reader</key>
+<value>
+    <identifiesControllerService>org.apache.nifi.serialization.RecordReaderFactory</identifiesControllerService>
+    <name>record-reader</name>
+</value>
+                            </entry>
+                            <entry>
+<key>hive3-stream-metastore-uri</key>
+<value>
+    <name>hive3-stream-metastore-uri</name>
+</value>
+                            </entry>
+                            <entry>
+<key>hive3-config-resources</key>
+<value>
+    <name>hive3-config-resources</name>
+</value>
+                            </entry>
+                            <entry>
+<key>hive3-stream-database-name</key>
+<value>
+    <name>hive3-stream-database-name</name>
+</value>
+                            </entry>
+                            <entry>
+<key>hive3-stream-table-name</key>
+<value>
+    <name>hive3-stream-table-name</name>
+</value>
+                            </entry>
+                            <entry>
+<key>hive3-stream-part-vals</key>
+<value>
+    <name>hive3-stream-part-vals</name>
+</value>
+                            </entry>
+                            <entry>
+<key>hive3-stream-autocreate-partition</key>
+<value>
+    <name>hive3-stream-autocreate-partition</name>
+</value>
+                            </entry>
+                            <entry>
+<key>hive3-stream-call-timeout</key>
+<value>
+    <name>hive3-stream-call-timeout</name>
+</value>
+                            </entry>
+                            <entry>
+<key>hive3-stream-disable-optimizations</key>
+<value>
+    <name>hive3-stream-disable-optimizations</name>
+</value>
+                            </entry>
+                            <entry>
+<key>rollback-on-failure</key>
+<value>
+    <name>rollback-on-failure</name>
+</value>
+                            </entry>
+                            <entry>
+<key>kerberos-credentials-service</key>
+<value>
+    <identifiesControllerService>org.apache.nifi.kerberos.KerberosCredentialsService</identifiesControllerService>
+    <name>kerberos-credentials-service</name>
+</value>
+                            </entry>
+                        </descriptors>
+                        <executionNode>ALL</executionNode>
+                        <lossTolerant>false</lossTolerant>
+                        <penaltyDuration>30 sec</penaltyDuration>
+                        <properties>
+                            <entry>
+<key>record-reader</key>
+<value>57474429-c8f2-3b1a-0000-000000000000</value>
+                            </entry>
+                            <entry>
+<key>hive3-stream-metastore-uri</key>
+<value>thrift://104.214.62.176:9083</value>
+                            </entry>
+                            <entry>
+<key>hive3-config-resources</key>
+<value>/home/nifi/old_sites/core-site.xml,/home/nifi/old_sites/hdfs-site.xml,/home/nifi/old_sites/hive-site.xml</value>
+                            </entry>
+                            <entry>
+<key>hive3-stream-database-name</key>
+<value>default</value>
+                            </entry>
+                            <entry>
+<key>hive3-stream-table-name</key>
+<value>emp2</value>
+                            </entry>
+                            <entry>
+<key>hive3-stream-part-vals</key>
+                            </entry>
+                            <entry>
+<key>hive3-stream-autocreate-partition</key>
+<value>false</value>
+                            </entry>
+                            <entry>
+<key>hive3-stream-call-timeout</key>
+<value>0</value>
+                            </entry>
+                            <entry>
+<key>hive3-stream-disable-optimizations</key>
+<value>false</value>
+                            </entry>
+                            <entry>
+<key>rollback-on-failure</key>
+<value>false</value>
+                            </entry>
+                            <entry>
+<key>kerberos-credentials-service</key>
+                            </entry>
+                        </properties>
+                        <runDurationMillis>0</runDurationMillis>
+                        <schedulingPeriod>60 sec</schedulingPeriod>
+                        <schedulingStrategy>TIMER_DRIVEN</schedulingStrategy>
+                        <yieldDuration>1 sec</yieldDuration>
+                    </config>
+                    <executionNodeRestricted>false</executionNodeRestricted>
+                    <name>PutHive3Streaming</name>
+                    <relationships>
+                        <autoTerminate>true</autoTerminate>
+                        <name>failure</name>
+                    </relationships>
+                    <relationships>
+                        <autoTerminate>true</autoTerminate>
+                        <name>retry</name>
+                    </relationships>
+                    <relationships>
+                        <autoTerminate>true</autoTerminate>
+                        <name>success</name>
+                    </relationships>
+                    <state>STOPPED</state>
+                    <style/>
+                    <type>org.apache.nifi.processors.hive.PutHive3Streaming</type>
+                </processors>
+            </contents>
+            <name>Hive Acid</name>
+            <variables/>
+        </processGroups>
+    </snippet>
+    <timestamp>12/19/2018 04:50:47 UTC</timestamp>
+</template>
