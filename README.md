@@ -11,3 +11,8 @@ Workflow designed to benchmark your cluster.  If you want push your cluster limi
 
 Log_Parsing.xml <br>
 Workflow designed to ingest unstructured logs (ie windows) and parse them via grok.  The output of the parsing is a json structure which can be sinked to virtually any target.
+
+
+
+Hive3Streaming.xml <br>
+Workflow designed to generate json data and stream into Hive3
