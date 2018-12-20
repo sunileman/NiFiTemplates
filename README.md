@@ -16,3 +16,6 @@ Workflow designed to ingest unstructured logs (ie windows) and parse them via gr
 
 Hive3Streaming.xml <br>
 Workflow designed to generate json data and stream into Hive3
+
+SplitJsonArray.xml <br>
+Workflow designed to generate json array (7 records), split into indivdual json records, pull a attribute from the json event and route on it
