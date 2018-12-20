@@ -1,0 +1,602 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<template encoding-version="1.2">
+    <description></description>
+    <groupId>7c84501d-d10c-407c-b9f3-1d80e38fe36a</groupId>
+    <name>SplitJsonArray</name>
+    <snippet>
+        <connections>
+            <id>458b2824-0f7f-306c-0000-000000000000</id>
+            <parentGroupId>46f95fe5-3024-31d8-0000-000000000000</parentGroupId>
+            <backPressureDataSizeThreshold>1 GB</backPressureDataSizeThreshold>
+            <backPressureObjectThreshold>10000</backPressureObjectThreshold>
+            <destination>
+                <groupId>46f95fe5-3024-31d8-0000-000000000000</groupId>
+                <id>a9f02c8e-aa7c-314c-0000-000000000000</id>
+                <type>PROCESSOR</type>
+            </destination>
+            <flowFileExpiration>0 sec</flowFileExpiration>
+            <labelIndex>1</labelIndex>
+            <loadBalanceCompression>DO_NOT_COMPRESS</loadBalanceCompression>
+            <loadBalancePartitionAttribute></loadBalancePartitionAttribute>
+            <loadBalanceStatus>LOAD_BALANCE_NOT_CONFIGURED</loadBalanceStatus>
+            <loadBalanceStrategy>DO_NOT_LOAD_BALANCE</loadBalanceStrategy>
+            <name></name>
+            <selectedRelationships>GreaterOrEqualTo30</selectedRelationships>
+            <source>
+                <groupId>46f95fe5-3024-31d8-0000-000000000000</groupId>
+                <id>8cce68da-d75a-3455-0000-000000000000</id>
+                <type>PROCESSOR</type>
+            </source>
+            <zIndex>0</zIndex>
+        </connections>
+        <connections>
+            <id>4c9187c7-6028-3d43-0000-000000000000</id>
+            <parentGroupId>46f95fe5-3024-31d8-0000-000000000000</parentGroupId>
+            <backPressureDataSizeThreshold>1 GB</backPressureDataSizeThreshold>
+            <backPressureObjectThreshold>10000</backPressureObjectThreshold>
+            <destination>
+                <groupId>46f95fe5-3024-31d8-0000-000000000000</groupId>
+                <id>8cce68da-d75a-3455-0000-000000000000</id>
+                <type>PROCESSOR</type>
+            </destination>
+            <flowFileExpiration>0 sec</flowFileExpiration>
+            <labelIndex>1</labelIndex>
+            <loadBalanceCompression>DO_NOT_COMPRESS</loadBalanceCompression>
+            <loadBalancePartitionAttribute></loadBalancePartitionAttribute>
+            <loadBalanceStatus>LOAD_BALANCE_NOT_CONFIGURED</loadBalanceStatus>
+            <loadBalanceStrategy>DO_NOT_LOAD_BALANCE</loadBalanceStrategy>
+            <name></name>
+            <selectedRelationships>matched</selectedRelationships>
+            <source>
+                <groupId>46f95fe5-3024-31d8-0000-000000000000</groupId>
+                <id>aca486c7-1c2c-380b-0000-000000000000</id>
+                <type>PROCESSOR</type>
+            </source>
+            <zIndex>0</zIndex>
+        </connections>
+        <connections>
+            <id>519acb95-bf00-3a9e-0000-000000000000</id>
+            <parentGroupId>46f95fe5-3024-31d8-0000-000000000000</parentGroupId>
+            <backPressureDataSizeThreshold>1 GB</backPressureDataSizeThreshold>
+            <backPressureObjectThreshold>10000</backPressureObjectThreshold>
+            <destination>
+                <groupId>46f95fe5-3024-31d8-0000-000000000000</groupId>
+                <id>97a9cc92-53e8-364d-0000-000000000000</id>
+                <type>PROCESSOR</type>
+            </destination>
+            <flowFileExpiration>0 sec</flowFileExpiration>
+            <labelIndex>1</labelIndex>
+            <loadBalanceCompression>DO_NOT_COMPRESS</loadBalanceCompression>
+            <loadBalancePartitionAttribute></loadBalancePartitionAttribute>
+            <loadBalanceStatus>LOAD_BALANCE_NOT_CONFIGURED</loadBalanceStatus>
+            <loadBalanceStrategy>DO_NOT_LOAD_BALANCE</loadBalanceStrategy>
+            <name></name>
+            <selectedRelationships>LessThan30</selectedRelationships>
+            <source>
+                <groupId>46f95fe5-3024-31d8-0000-000000000000</groupId>
+                <id>8cce68da-d75a-3455-0000-000000000000</id>
+                <type>PROCESSOR</type>
+            </source>
+            <zIndex>0</zIndex>
+        </connections>
+        <connections>
+            <id>55d11cc4-c2b7-355d-0000-000000000000</id>
+            <parentGroupId>46f95fe5-3024-31d8-0000-000000000000</parentGroupId>
+            <backPressureDataSizeThreshold>1 GB</backPressureDataSizeThreshold>
+            <backPressureObjectThreshold>10000</backPressureObjectThreshold>
+            <destination>
+                <groupId>46f95fe5-3024-31d8-0000-000000000000</groupId>
+                <id>7366a9f6-b44f-32fc-0000-000000000000</id>
+                <type>PROCESSOR</type>
+            </destination>
+            <flowFileExpiration>0 sec</flowFileExpiration>
+            <labelIndex>1</labelIndex>
+            <loadBalanceCompression>DO_NOT_COMPRESS</loadBalanceCompression>
+            <loadBalancePartitionAttribute></loadBalancePartitionAttribute>
+            <loadBalanceStatus>LOAD_BALANCE_NOT_CONFIGURED</loadBalanceStatus>
+            <loadBalanceStrategy>DO_NOT_LOAD_BALANCE</loadBalanceStrategy>
+            <name></name>
+            <selectedRelationships>success</selectedRelationships>
+            <source>
+                <groupId>46f95fe5-3024-31d8-0000-000000000000</groupId>
+                <id>06ab9130-5789-31b6-0000-000000000000</id>
+                <type>PROCESSOR</type>
+            </source>
+            <zIndex>0</zIndex>
+        </connections>
+        <connections>
+            <id>c2e4e117-156c-3c39-0000-000000000000</id>
+            <parentGroupId>46f95fe5-3024-31d8-0000-000000000000</parentGroupId>
+            <backPressureDataSizeThreshold>1 GB</backPressureDataSizeThreshold>
+            <backPressureObjectThreshold>10000</backPressureObjectThreshold>
+            <destination>
+                <groupId>46f95fe5-3024-31d8-0000-000000000000</groupId>
+                <id>aca486c7-1c2c-380b-0000-000000000000</id>
+                <type>PROCESSOR</type>
+            </destination>
+            <flowFileExpiration>0 sec</flowFileExpiration>
+            <labelIndex>1</labelIndex>
+            <loadBalanceCompression>DO_NOT_COMPRESS</loadBalanceCompression>
+            <loadBalancePartitionAttribute></loadBalancePartitionAttribute>
+            <loadBalanceStatus>LOAD_BALANCE_NOT_CONFIGURED</loadBalanceStatus>
+            <loadBalanceStrategy>DO_NOT_LOAD_BALANCE</loadBalanceStrategy>
+            <name></name>
+            <selectedRelationships>split</selectedRelationships>
+            <source>
+                <groupId>46f95fe5-3024-31d8-0000-000000000000</groupId>
+                <id>7366a9f6-b44f-32fc-0000-000000000000</id>
+                <type>PROCESSOR</type>
+            </source>
+            <zIndex>0</zIndex>
+        </connections>
+        <processors>
+            <id>06ab9130-5789-31b6-0000-000000000000</id>
+            <parentGroupId>46f95fe5-3024-31d8-0000-000000000000</parentGroupId>
+            <position>
+                <x>225.7835693359375</x>
+                <y>0.0</y>
+            </position>
+            <bundle>
+                <artifact>nifi-standard-nar</artifact>
+                <group>org.apache.nifi</group>
+                <version>1.8.0.3.3.1.0-10</version>
+            </bundle>
+            <config>
+                <bulletinLevel>WARN</bulletinLevel>
+                <comments></comments>
+                <concurrentlySchedulableTaskCount>1</concurrentlySchedulableTaskCount>
+                <descriptors>
+                    <entry>
+                        <key>File Size</key>
+                        <value>
+                            <name>File Size</name>
+                        </value>
+                    </entry>
+                    <entry>
+                        <key>Batch Size</key>
+                        <value>
+                            <name>Batch Size</name>
+                        </value>
+                    </entry>
+                    <entry>
+                        <key>Data Format</key>
+                        <value>
+                            <name>Data Format</name>
+                        </value>
+                    </entry>
+                    <entry>
+                        <key>Unique FlowFiles</key>
+                        <value>
+                            <name>Unique FlowFiles</name>
+                        </value>
+                    </entry>
+                    <entry>
+                        <key>generate-ff-custom-text</key>
+                        <value>
+                            <name>generate-ff-custom-text</name>
+                        </value>
+                    </entry>
+                    <entry>
+                        <key>character-set</key>
+                        <value>
+                            <name>character-set</name>
+                        </value>
+                    </entry>
+                </descriptors>
+                <executionNode>ALL</executionNode>
+                <lossTolerant>false</lossTolerant>
+                <penaltyDuration>30 sec</penaltyDuration>
+                <properties>
+                    <entry>
+                        <key>File Size</key>
+                        <value>0B</value>
+                    </entry>
+                    <entry>
+                        <key>Batch Size</key>
+                        <value>1</value>
+                    </entry>
+                    <entry>
+                        <key>Data Format</key>
+                        <value>Text</value>
+                    </entry>
+                    <entry>
+                        <key>Unique FlowFiles</key>
+                        <value>false</value>
+                    </entry>
+                    <entry>
+                        <key>generate-ff-custom-text</key>
+                        <value>[{"_id":"5c1bcabf6c3c10d94dbc2e51","index":0,"guid":"82af9369-9f59-458e-9431-f0daae197a26","isActive":true,"balance":"$2,281.75","picture":"http://placehold.it/32x32","age":39,"eyeColor":"brown","name":"Hahn Manning","gender":"male","company":"COMTENT","email":"hahnmanning@comtent.com","phone":"+1 (907) 425-2674","address":"706 Hart Place, Laurelton, Florida, 4866","about":"Dolor consectetur dolor aute aute aliqua nostrud anim ex. Ea labore elit non mollit. Nisi fugiat magna mollit qui do excepteur occaecat fugiat.\r\n","registered":"2017-09-01T04:40:20 +05:00","latitude":-47.64659,"longitude":-84.3745,"tags":["non","nulla","tempor","sit","magna","elit","aute"],"friends":[{"id":0,"name":"Clark Terrell"},{"id":1,"name":"Frederick Rodriquez"},{"id":2,"name":"Shepherd Ratliff"}],"greeting":"Hello, Hahn Manning! You have 10 unread messages.","favoriteFruit":"banana"},{"_id":"5c1bcabf50a2acaf42e615cd","index":1,"guid":"98682011-e793-4f70-a983-2c797d583d57","isActive":false,"balance":"$1,337.10","picture":"http://placehold.it/32x32","age":20,"eyeColor":"blue","name":"Mercado Hutchinson","gender":"male","company":"MINGA","email":"mercadohutchinson@minga.com","phone":"+1 (843) 531-3826","address":"598 Chestnut Street, Bangor, Iowa, 3735","about":"Esse non cupidatat laborum deserunt commodo duis cillum cillum cillum culpa elit consectetur ullamco magna. Tempor eu fugiat irure id fugiat. Aliqua excepteur ex mollit dolor eu sint consectetur mollit tempor non elit consectetur proident.\r\n","registered":"2017-04-08T03:26:15 +05:00","latitude":-68.07656,"longitude":-173.27579,"tags":["deserunt","aliquip","non","sint","nisi","aute","sunt"],"friends":[{"id":0,"name":"Nanette Houston"},{"id":1,"name":"Hardy Hall"},{"id":2,"name":"Evangeline Vang"}],"greeting":"Hello, Mercado Hutchinson! You have 1 unread messages.","favoriteFruit":"banana"},{"_id":"5c1bcabf13004e3b9ffbef80","index":2,"guid":"d77d3ad7-6e11-4dbd-a214-9e40c6cbe7d6","isActive":true,"balance":"$1,124.71","picture":"http://placehold.it/32x32","age":40,"eyeColor":"brown","name":"Sharpe Hartman","gender":"male","company":"IMKAN","email":"sharpehartman@imkan.com","phone":"+1 (852) 425-2106","address":"454 Caton Avenue, Hanover, Washington, 172","about":"Dolore cillum aliquip dolore consequat consectetur elit voluptate dolor. Pariatur consequat nostrud ex consequat laborum sunt sit. Exercitation ullamco consequat et officia eu officia sint excepteur ea. Ut nisi amet qui nulla ipsum est. Labore culpa exercitation ipsum fugiat est incididunt eiusmod eiusmod.\r\n","registered":"2016-07-24T10:05:05 +05:00","latitude":84.5263,"longitude":-107.19346,"tags":["ipsum","enim","laboris","anim","qui","deserunt","ea"],"friends":[{"id":0,"name":"Stanley Daniels"},{"id":1,"name":"Gutierrez Franco"},{"id":2,"name":"Hunter May"}],"greeting":"Hello, Sharpe Hartman! You have 2 unread messages.","favoriteFruit":"strawberry"},{"_id":"5c1bcabfc88311e57ae1c36e","index":3,"guid":"b16dc630-f429-4d31-b153-138eaa52cb4c","isActive":true,"balance":"$2,060.31","picture":"http://placehold.it/32x32","age":35,"eyeColor":"blue","name":"Rowena Albert","gender":"female","company":"GEEKFARM","email":"rowenaalbert@geekfarm.com","phone":"+1 (876) 564-3046","address":"295 Baltic Street, Westboro, Massachusetts, 5341","about":"Adipisicing velit reprehenderit incididunt irure. Exercitation quis fugiat amet sint ex ad tempor do commodo irure. Sunt ullamco ullamco culpa amet commodo ea qui ea cupidatat. Do veniam est nulla irure excepteur consectetur ex magna anim eiusmod sint consequat voluptate ipsum. Reprehenderit ex et magna cupidatat id anim pariatur et pariatur ad. Ut voluptate mollit deserunt anim laboris nostrud adipisicing cillum labore nisi amet non laborum deserunt. Est amet ea aute qui eu sunt.\r\n","registered":"2017-10-04T12:05:03 +05:00","latitude":-51.83294,"longitude":-28.31449,"tags":["aliqua","consectetur","nisi","nulla","anim","ea","ex"],"friends":[{"id":0,"name":"Irma Cummings"},{"id":1,"name":"Brooks Brown"},{"id":2,"name":"Taylor Michael"}],"greeting":"Hello, Rowena Albert! You have 9 unread messages.","favoriteFruit":"apple"},{"_id":"5c1bcabf884c8607f7c7048c","index":4,"guid":"9c365720-f963-490e-8b95-ab8815071ff3","isActive":false,"balance":"$3,029.53","picture":"http://placehold.it/32x32","age":38,"eyeColor":"green","name":"Susanne Key","gender":"female","company":"ZILIDIUM","email":"susannekey@zilidium.com","phone":"+1 (841) 468-3985","address":"809 Elliott Walk, Hinsdale, Ohio, 8139","about":"Id ullamco qui velit mollit qui amet tempor occaecat elit ad sit Lorem. Aliquip tempor in aliqua duis ex quis do officia et dolore voluptate. Enim quis quis veniam anim cupidatat. Id duis sint et ad do Lorem sit cupidatat esse non. Adipisicing incididunt et ex qui occaecat ipsum pariatur tempor anim qui nisi labore elit exercitation. Ut dolore sint mollit in ea aliqua qui consequat ullamco ullamco aliquip. Aliquip nulla dolor est esse cillum aliquip tempor enim nisi anim aliquip aute eiusmod.\r\n","registered":"2015-03-09T08:02:40 +05:00","latitude":15.402336,"longitude":150.41026,"tags":["cillum","aute","eu","occaecat","nostrud","dolore","dolor"],"friends":[{"id":0,"name":"Poole Beach"},{"id":1,"name":"Dora Hardin"},{"id":2,"name":"Alfreda Cobb"}],"greeting":"Hello, Susanne Key! You have 2 unread messages.","favoriteFruit":"strawberry"},{"_id":"5c1bcabf554a5882d3b93389","index":5,"guid":"4ff5be6c-8244-4ffa-ba54-56e6a1334d5a","isActive":true,"balance":"$1,841.90","picture":"http://placehold.it/32x32","age":23,"eyeColor":"blue","name":"Marylou Moody","gender":"female","company":"ZILLACON","email":"maryloumoody@zillacon.com","phone":"+1 (814) 475-2055","address":"237 Prospect Avenue, Tecolotito, Texas, 8661","about":"Proident nisi non ad laborum Lorem consectetur esse officia sint ad laborum Lorem. Tempor minim laborum ex elit aliquip. Incididunt sit ut aute laboris laboris consequat incididunt est cupidatat anim minim in sunt. Eu aliquip in commodo amet consequat eu tempor ex adipisicing excepteur magna in labore. Mollit incididunt ut sunt est. Non voluptate excepteur aute exercitation amet. Non est eiusmod cillum reprehenderit laboris est esse voluptate minim eiusmod amet eiusmod Lorem.\r\n","registered":"2014-11-05T11:09:46 +06:00","latitude":84.70372,"longitude":-111.57235,"tags":["proident","duis","pariatur","labore","ex","est","velit"],"friends":[{"id":0,"name":"Twila Winters"},{"id":1,"name":"Hayden Mason"},{"id":2,"name":"Sylvia White"}],"greeting":"Hello, Marylou Moody! You have 6 unread messages.","favoriteFruit":"strawberry"},{"_id":"5c1bcabf7133df3ac8bdea36","index":6,"guid":"9a0008e6-dbb6-4aea-b929-d40490ed590c","isActive":true,"balance":"$1,538.20","picture":"http://placehold.it/32x32","age":29,"eyeColor":"brown","name":"Riggs Bolton","gender":"male","company":"CAPSCREEN","email":"riggsbolton@capscreen.com","phone":"+1 (897) 451-3469","address":"148 Herkimer Court, Vienna, Puerto Rico, 6620","about":"Laboris amet quis voluptate amet mollit. Est officia elit quis nisi ad anim excepteur enim cillum. Officia eiusmod ad tempor proident anim mollit quis adipisicing quis adipisicing veniam culpa amet. Minim est nisi amet consectetur. Eiusmod dolore ea mollit do eiusmod quis enim eiusmod. Incididunt magna sit officia mollit qui laboris tempor ipsum laborum fugiat sunt elit sunt nisi. Cupidatat Lorem do ea nulla ut ad ad non.\r\n","registered":"2015-03-18T02:30:44 +05:00","latitude":-17.56742,"longitude":65.5637,"tags":["cillum","et","mollit","duis","velit","laboris","mollit"],"friends":[{"id":0,"name":"Schroeder Valentine"},{"id":1,"name":"Kelly Nixon"},{"id":2,"name":"Crosby Vaughn"}],"greeting":"Hello, Riggs Bolton! You have 9 unread messages.","favoriteFruit":"banana"}]</value>
+                    </entry>
+                    <entry>
+                        <key>character-set</key>
+                        <value>UTF-8</value>
+                    </entry>
+                </properties>
+                <runDurationMillis>0</runDurationMillis>
+                <schedulingPeriod>60 sec</schedulingPeriod>
+                <schedulingStrategy>TIMER_DRIVEN</schedulingStrategy>
+                <yieldDuration>1 sec</yieldDuration>
+            </config>
+            <executionNodeRestricted>false</executionNodeRestricted>
+            <name>GenerateFlowFile</name>
+            <relationships>
+                <autoTerminate>false</autoTerminate>
+                <name>success</name>
+            </relationships>
+            <state>STOPPED</state>
+            <style/>
+            <type>org.apache.nifi.processors.standard.GenerateFlowFile</type>
+        </processors>
+        <processors>
+            <id>7366a9f6-b44f-32fc-0000-000000000000</id>
+            <parentGroupId>46f95fe5-3024-31d8-0000-000000000000</parentGroupId>
+            <position>
+                <x>243.7835693359375</x>
+                <y>278.0</y>
+            </position>
+            <bundle>
+                <artifact>nifi-standard-nar</artifact>
+                <group>org.apache.nifi</group>
+                <version>1.8.0.3.3.1.0-10</version>
+            </bundle>
+            <config>
+                <bulletinLevel>WARN</bulletinLevel>
+                <comments></comments>
+                <concurrentlySchedulableTaskCount>1</concurrentlySchedulableTaskCount>
+                <descriptors>
+                    <entry>
+                        <key>JsonPath Expression</key>
+                        <value>
+                            <name>JsonPath Expression</name>
+                        </value>
+                    </entry>
+                    <entry>
+                        <key>Null Value Representation</key>
+                        <value>
+                            <name>Null Value Representation</name>
+                        </value>
+                    </entry>
+                </descriptors>
+                <executionNode>ALL</executionNode>
+                <lossTolerant>false</lossTolerant>
+                <penaltyDuration>30 sec</penaltyDuration>
+                <properties>
+                    <entry>
+                        <key>JsonPath Expression</key>
+                        <value>$.*</value>
+                    </entry>
+                    <entry>
+                        <key>Null Value Representation</key>
+                        <value>empty string</value>
+                    </entry>
+                </properties>
+                <runDurationMillis>0</runDurationMillis>
+                <schedulingPeriod>0 sec</schedulingPeriod>
+                <schedulingStrategy>TIMER_DRIVEN</schedulingStrategy>
+                <yieldDuration>1 sec</yieldDuration>
+            </config>
+            <executionNodeRestricted>false</executionNodeRestricted>
+            <name>SplitJson</name>
+            <relationships>
+                <autoTerminate>true</autoTerminate>
+                <name>failure</name>
+            </relationships>
+            <relationships>
+                <autoTerminate>true</autoTerminate>
+                <name>original</name>
+            </relationships>
+            <relationships>
+                <autoTerminate>false</autoTerminate>
+                <name>split</name>
+            </relationships>
+            <state>STOPPED</state>
+            <style/>
+            <type>org.apache.nifi.processors.standard.SplitJson</type>
+        </processors>
+        <processors>
+            <id>8cce68da-d75a-3455-0000-000000000000</id>
+            <parentGroupId>46f95fe5-3024-31d8-0000-000000000000</parentGroupId>
+            <position>
+                <x>254.7835693359375</x>
+                <y>813.0</y>
+            </position>
+            <bundle>
+                <artifact>nifi-standard-nar</artifact>
+                <group>org.apache.nifi</group>
+                <version>1.8.0.3.3.1.0-10</version>
+            </bundle>
+            <config>
+                <bulletinLevel>WARN</bulletinLevel>
+                <comments></comments>
+                <concurrentlySchedulableTaskCount>2</concurrentlySchedulableTaskCount>
+                <descriptors>
+                    <entry>
+                        <key>Routing Strategy</key>
+                        <value>
+                            <name>Routing Strategy</name>
+                        </value>
+                    </entry>
+                    <entry>
+                        <key>GreaterOrEqualTo30</key>
+                        <value>
+                            <name>GreaterOrEqualTo30</name>
+                        </value>
+                    </entry>
+                    <entry>
+                        <key>LessThan30</key>
+                        <value>
+                            <name>LessThan30</name>
+                        </value>
+                    </entry>
+                </descriptors>
+                <executionNode>ALL</executionNode>
+                <lossTolerant>false</lossTolerant>
+                <penaltyDuration>30 sec</penaltyDuration>
+                <properties>
+                    <entry>
+                        <key>Routing Strategy</key>
+                        <value>Route to Property name</value>
+                    </entry>
+                    <entry>
+                        <key>GreaterOrEqualTo30</key>
+                        <value>${age:ge(30)}</value>
+                    </entry>
+                    <entry>
+                        <key>LessThan30</key>
+                        <value>${age:lt(30)}</value>
+                    </entry>
+                </properties>
+                <runDurationMillis>25</runDurationMillis>
+                <schedulingPeriod>0 sec</schedulingPeriod>
+                <schedulingStrategy>TIMER_DRIVEN</schedulingStrategy>
+                <yieldDuration>1 sec</yieldDuration>
+            </config>
+            <executionNodeRestricted>false</executionNodeRestricted>
+            <name>Route on Age</name>
+            <relationships>
+                <autoTerminate>false</autoTerminate>
+                <name>GreaterOrEqualTo30</name>
+            </relationships>
+            <relationships>
+                <autoTerminate>false</autoTerminate>
+                <name>LessThan30</name>
+            </relationships>
+            <relationships>
+                <autoTerminate>true</autoTerminate>
+                <name>unmatched</name>
+            </relationships>
+            <state>STOPPED</state>
+            <style/>
+            <type>org.apache.nifi.processors.standard.RouteOnAttribute</type>
+        </processors>
+        <processors>
+            <id>97a9cc92-53e8-364d-0000-000000000000</id>
+            <parentGroupId>46f95fe5-3024-31d8-0000-000000000000</parentGroupId>
+            <position>
+                <x>496.0</x>
+                <y>1068.2442321777344</y>
+            </position>
+            <bundle>
+                <artifact>nifi-standard-nar</artifact>
+                <group>org.apache.nifi</group>
+                <version>1.8.0.3.3.1.0-10</version>
+            </bundle>
+            <config>
+                <bulletinLevel>WARN</bulletinLevel>
+                <comments></comments>
+                <concurrentlySchedulableTaskCount>1</concurrentlySchedulableTaskCount>
+                <descriptors>
+                    <entry>
+                        <key>log-level</key>
+                        <value>
+                            <name>log-level</name>
+                        </value>
+                    </entry>
+                    <entry>
+                        <key>log-prefix</key>
+                        <value>
+                            <name>log-prefix</name>
+                        </value>
+                    </entry>
+                    <entry>
+                        <key>log-message</key>
+                        <value>
+                            <name>log-message</name>
+                        </value>
+                    </entry>
+                </descriptors>
+                <executionNode>ALL</executionNode>
+                <lossTolerant>false</lossTolerant>
+                <penaltyDuration>30 sec</penaltyDuration>
+                <properties>
+                    <entry>
+                        <key>log-level</key>
+                        <value>info</value>
+                    </entry>
+                    <entry>
+                        <key>log-prefix</key>
+                    </entry>
+                    <entry>
+                        <key>log-message</key>
+                    </entry>
+                </properties>
+                <runDurationMillis>0</runDurationMillis>
+                <schedulingPeriod>0 sec</schedulingPeriod>
+                <schedulingStrategy>TIMER_DRIVEN</schedulingStrategy>
+                <yieldDuration>1 sec</yieldDuration>
+            </config>
+            <executionNodeRestricted>false</executionNodeRestricted>
+            <name>LogMessage</name>
+            <relationships>
+                <autoTerminate>true</autoTerminate>
+                <name>success</name>
+            </relationships>
+            <state>STOPPED</state>
+            <style/>
+            <type>org.apache.nifi.processors.standard.LogMessage</type>
+        </processors>
+        <processors>
+            <id>a9f02c8e-aa7c-314c-0000-000000000000</id>
+            <parentGroupId>46f95fe5-3024-31d8-0000-000000000000</parentGroupId>
+            <position>
+                <x>0.0</x>
+                <y>1064.2442321777344</y>
+            </position>
+            <bundle>
+                <artifact>nifi-standard-nar</artifact>
+                <group>org.apache.nifi</group>
+                <version>1.8.0.3.3.1.0-10</version>
+            </bundle>
+            <config>
+                <bulletinLevel>WARN</bulletinLevel>
+                <comments></comments>
+                <concurrentlySchedulableTaskCount>1</concurrentlySchedulableTaskCount>
+                <descriptors>
+                    <entry>
+                        <key>log-level</key>
+                        <value>
+                            <name>log-level</name>
+                        </value>
+                    </entry>
+                    <entry>
+                        <key>log-prefix</key>
+                        <value>
+                            <name>log-prefix</name>
+                        </value>
+                    </entry>
+                    <entry>
+                        <key>log-message</key>
+                        <value>
+                            <name>log-message</name>
+                        </value>
+                    </entry>
+                </descriptors>
+                <executionNode>ALL</executionNode>
+                <lossTolerant>false</lossTolerant>
+                <penaltyDuration>30 sec</penaltyDuration>
+                <properties>
+                    <entry>
+                        <key>log-level</key>
+                        <value>info</value>
+                    </entry>
+                    <entry>
+                        <key>log-prefix</key>
+                    </entry>
+                    <entry>
+                        <key>log-message</key>
+                    </entry>
+                </properties>
+                <runDurationMillis>0</runDurationMillis>
+                <schedulingPeriod>0 sec</schedulingPeriod>
+                <schedulingStrategy>TIMER_DRIVEN</schedulingStrategy>
+                <yieldDuration>1 sec</yieldDuration>
+            </config>
+            <executionNodeRestricted>false</executionNodeRestricted>
+            <name>LogMessage</name>
+            <relationships>
+                <autoTerminate>true</autoTerminate>
+                <name>success</name>
+            </relationships>
+            <state>STOPPED</state>
+            <style/>
+            <type>org.apache.nifi.processors.standard.LogMessage</type>
+        </processors>
+        <processors>
+            <id>aca486c7-1c2c-380b-0000-000000000000</id>
+            <parentGroupId>46f95fe5-3024-31d8-0000-000000000000</parentGroupId>
+            <position>
+                <x>254.7835693359375</x>
+                <y>569.0</y>
+            </position>
+            <bundle>
+                <artifact>nifi-standard-nar</artifact>
+                <group>org.apache.nifi</group>
+                <version>1.8.0.3.3.1.0-10</version>
+            </bundle>
+            <config>
+                <bulletinLevel>ERROR</bulletinLevel>
+                <comments></comments>
+                <concurrentlySchedulableTaskCount>4</concurrentlySchedulableTaskCount>
+                <descriptors>
+                    <entry>
+                        <key>Destination</key>
+                        <value>
+                            <name>Destination</name>
+                        </value>
+                    </entry>
+                    <entry>
+                        <key>Return Type</key>
+                        <value>
+                            <name>Return Type</name>
+                        </value>
+                    </entry>
+                    <entry>
+                        <key>Path Not Found Behavior</key>
+                        <value>
+                            <name>Path Not Found Behavior</name>
+                        </value>
+                    </entry>
+                    <entry>
+                        <key>Null Value Representation</key>
+                        <value>
+                            <name>Null Value Representation</name>
+                        </value>
+                    </entry>
+                    <entry>
+                        <key>age</key>
+                        <value>
+                            <name>age</name>
+                        </value>
+                    </entry>
+                </descriptors>
+                <executionNode>ALL</executionNode>
+                <lossTolerant>false</lossTolerant>
+                <penaltyDuration>30 sec</penaltyDuration>
+                <properties>
+                    <entry>
+                        <key>Destination</key>
+                        <value>flowfile-attribute</value>
+                    </entry>
+                    <entry>
+                        <key>Return Type</key>
+                        <value>auto-detect</value>
+                    </entry>
+                    <entry>
+                        <key>Path Not Found Behavior</key>
+                        <value>ignore</value>
+                    </entry>
+                    <entry>
+                        <key>Null Value Representation</key>
+                        <value>empty string</value>
+                    </entry>
+                    <entry>
+                        <key>age</key>
+                        <value>$.age</value>
+                    </entry>
+                </properties>
+                <runDurationMillis>25</runDurationMillis>
+                <schedulingPeriod>0 sec</schedulingPeriod>
+                <schedulingStrategy>TIMER_DRIVEN</schedulingStrategy>
+                <yieldDuration>1 sec</yieldDuration>
+            </config>
+            <executionNodeRestricted>false</executionNodeRestricted>
+            <name>Pull Age Attribute</name>
+            <relationships>
+                <autoTerminate>true</autoTerminate>
+                <name>failure</name>
+            </relationships>
+            <relationships>
+                <autoTerminate>false</autoTerminate>
+                <name>matched</name>
+            </relationships>
+            <relationships>
+                <autoTerminate>true</autoTerminate>
+                <name>unmatched</name>
+            </relationships>
+            <state>STOPPED</state>
+            <style/>
+            <type>org.apache.nifi.processors.standard.EvaluateJsonPath</type>
+        </processors>
+    </snippet>
+    <timestamp>12/20/2018 18:01:36 UTC</timestamp>
+</template>
