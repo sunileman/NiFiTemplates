@@ -1,0 +1,395 @@
+MiNiFi Config Version: 3
+Flow Controller:
+  name: minifi_v2
+  comment: ''
+Core Properties:
+  flow controller graceful shutdown period: 10 sec
+  flow service write delay interval: 500 ms
+  administrative yield duration: 30 sec
+  bored yield duration: 10 millis
+  max concurrent threads: 1
+  variable registry properties: ''
+FlowFile Repository:
+  partitions: 256
+  checkpoint interval: 2 mins
+  always sync: false
+  Swap:
+    threshold: 20000
+    in period: 5 sec
+    in threads: 1
+    out period: 5 sec
+    out threads: 4
+Content Repository:
+  content claim max appendable size: 10 MB
+  content claim max flow files: 100
+  always sync: false
+Provenance Repository:
+  provenance rollover time: 1 min
+  implementation: org.apache.nifi.provenance.MiNiFiPersistentProvenanceRepository
+Component Status Repository:
+  buffer size: 1440
+  snapshot frequency: 1 min
+Security Properties:
+  keystore: ''
+  keystore type: ''
+  keystore password: ''
+  key password: ''
+  truststore: ''
+  truststore type: ''
+  truststore password: ''
+  ssl protocol: ''
+  Sensitive Props:
+    key:
+    algorithm: PBEWITHMD5AND256BITAES-CBC-OPENSSL
+    provider: BC
+Processors:
+- id: bf07c93f-5b9d-38e2-0000-000000000000
+  name: Add Meta Tag
+  class: org.apache.nifi.processors.standard.ReplaceText
+  max concurrent tasks: 1
+  scheduling strategy: TIMER_DRIVEN
+  scheduling period: 0 sec
+  penalization period: 30 sec
+  yield period: 1 sec
+  run duration nanos: 0
+  auto-terminated relationships list:
+  - failure
+  Properties:
+    Character Set: UTF-8
+    Evaluation Mode: Entire text
+    Maximum Buffer Size: 1 MB
+    Regular Expression: .*
+    Replacement Strategy: Prepend
+    Replacement Value: text=
+- id: dd1145b2-ee4a-3c9a-0000-000000000000
+  name: Call Sentiment API
+  class: org.apache.nifi.processors.standard.InvokeHTTP
+  max concurrent tasks: 1
+  scheduling strategy: TIMER_DRIVEN
+  scheduling period: 0 sec
+  penalization period: 30 sec
+  yield period: 1 sec
+  run duration nanos: 0
+  auto-terminated relationships list:
+  - No Retry
+  - Original
+  - Retry
+  Properties:
+    Add Response Headers to Request: 'false'
+    Always Output Response: 'true'
+    Attributes to Send: X-AYLIEN-TextAPI-Application.*
+    Basic Authentication Password:
+    Basic Authentication Username:
+    Connection Timeout: 5 secs
+    Content-Type: application/x-www-form-urlencoded
+    Digest Authentication: 'false'
+    Follow Redirects: 'True'
+    HTTP Method: POST
+    Include Date Header: 'False'
+    Max Length To Put In Attribute: '256'
+    Penalize on "No Retry": 'false'
+    Proxy Host:
+    Proxy Port:
+    Proxy Type: http
+    Put Response Body In Attribute: 'true'
+    Read Timeout: 15 secs
+    Remote URL: https://api.aylien.com/api/v1/sentiment
+    SSL Context Service:
+    Trusted Hostname:
+    Use Chunked Encoding: 'false'
+    etag-max-cache-size: 10MB
+    invokehttp-proxy-password:
+    invokehttp-proxy-user:
+    proxy-configuration-service:
+    send-message-body: 'true'
+    use-etag: 'false'
+- id: 0a239f4f-d0f3-3c07-0000-000000000000
+  name: Generate Pressure Readings
+  class: org.apache.nifi.processors.standard.GenerateFlowFile
+  max concurrent tasks: 1
+  scheduling strategy: TIMER_DRIVEN
+  scheduling period: 20 sec
+  penalization period: 30 sec
+  yield period: 1 sec
+  run duration nanos: 0
+  auto-terminated relationships list: []
+  Properties:
+    Batch Size: '1'
+    Data Format: Text
+    File Size: 0B
+    Unique FlowFiles: 'false'
+    character-set: UTF-8
+    generate-ff-custom-text: |-
+      {
+        "id": "${UUID()}",
+        "type": "pressure",
+        "reading": "${random()}",
+        "time": "${now()}"
+      }
+- id: 6fcd60bd-57a3-32a0-0000-000000000000
+  name: Generate Temp Readings
+  class: org.apache.nifi.processors.standard.GenerateFlowFile
+  max concurrent tasks: 1
+  scheduling strategy: TIMER_DRIVEN
+  scheduling period: 22 sec
+  penalization period: 30 sec
+  yield period: 1 sec
+  run duration nanos: 0
+  auto-terminated relationships list: []
+  Properties:
+    Batch Size: '1'
+    Data Format: Text
+    File Size: 0B
+    Unique FlowFiles: 'false'
+    character-set: UTF-8
+    generate-ff-custom-text: |-
+      {
+        "id": "${UUID()}",
+        "type": "temp",
+        "reading": "${random()}",
+        "time": "${now()}"
+      }
+- id: aba06206-e0d5-3ea8-0000-000000000000
+  name: Listen For Instructions
+  class: org.apache.nifi.processors.standard.ListenHTTP
+  max concurrent tasks: 1
+  scheduling strategy: TIMER_DRIVEN
+  scheduling period: 0 sec
+  penalization period: 30 sec
+  yield period: 1 sec
+  run duration nanos: 0
+  auto-terminated relationships list: []
+  Properties:
+    Authorized DN Pattern: .*
+    Base Path: demo
+    HTTP Headers to receive as Attributes (Regex):
+    Listening Port: '10222'
+    Max Data to Receive per Second:
+    Max Unconfirmed Flowfile Time: 60 secs
+    Return Code: '200'
+    SSL Context Service:
+    multipart-read-buffer-size: 512 KB
+    multipart-request-max-size: 1 MB
+- id: c9b0afe7-6196-36f3-0000-000000000000
+  name: Promote Content To FF
+  class: org.apache.nifi.processors.standard.ExtractText
+  max concurrent tasks: 1
+  scheduling strategy: TIMER_DRIVEN
+  scheduling period: 0 sec
+  penalization period: 30 sec
+  yield period: 1 sec
+  run duration nanos: 0
+  auto-terminated relationships list:
+  - unmatched
+  Properties:
+    Character Set: UTF-8
+    Enable Canonical Equivalence: 'false'
+    Enable Case-insensitive Matching: 'false'
+    Enable DOTALL Mode: 'false'
+    Enable Literal Parsing of the Pattern: 'false'
+    Enable Multiline Mode: 'false'
+    Enable Unicode Predefined Character Classes: 'false'
+    Enable Unicode-aware Case Folding: 'false'
+    Enable Unix Lines Mode: 'false'
+    Include Capture Group 0: 'true'
+    Maximum Buffer Size: 1 MB
+    Maximum Capture Group Length: '1024'
+    Permit Whitespace and Comments in Pattern: 'false'
+    extract-text-enable-repeating-capture-group: 'false'
+    message.body: .*
+- id: dcd3c494-63cf-375b-0000-000000000000
+  name: Replace Content with URL Encoding
+  class: org.apache.nifi.processors.standard.ReplaceText
+  max concurrent tasks: 1
+  scheduling strategy: TIMER_DRIVEN
+  scheduling period: 0 sec
+  penalization period: 30 sec
+  yield period: 1 sec
+  run duration nanos: 0
+  auto-terminated relationships list:
+  - failure
+  Properties:
+    Character Set: UTF-8
+    Evaluation Mode: Entire text
+    Maximum Buffer Size: 1 MB
+    Regular Expression: .*
+    Replacement Strategy: Always Replace
+    Replacement Value: ${message}
+- id: c7678a7d-ebfb-382e-0000-000000000000
+  name: Respond to sender
+  class: org.apache.nifi.processors.standard.InvokeHTTP
+  max concurrent tasks: 1
+  scheduling strategy: TIMER_DRIVEN
+  scheduling period: 0 sec
+  penalization period: 30 sec
+  yield period: 1 sec
+  run duration nanos: 0
+  auto-terminated relationships list:
+  - Failure
+  - No Retry
+  - Original
+  - Response
+  - Retry
+  Properties:
+    Add Response Headers to Request: 'false'
+    Always Output Response: 'false'
+    Attributes to Send:
+    Basic Authentication Password:
+    Basic Authentication Username:
+    Connection Timeout: 5 secs
+    Content-Type: ${mime.type}
+    Digest Authentication: 'false'
+    Follow Redirects: 'True'
+    HTTP Method: POST
+    Include Date Header: 'True'
+    Max Length To Put In Attribute: '256'
+    Penalize on "No Retry": 'false'
+    Proxy Host:
+    Proxy Port:
+    Proxy Type: http
+    Put Response Body In Attribute:
+    Read Timeout: 15 secs
+    Remote URL: http://YOUR-HOST-HERE:10223/sunnyrec
+    SSL Context Service:
+    Trusted Hostname:
+    Use Chunked Encoding: 'false'
+    etag-max-cache-size: 10MB
+    invokehttp-proxy-password:
+    invokehttp-proxy-user:
+    proxy-configuration-service:
+    send-message-body: 'true'
+    use-etag: 'false'
+- id: e62a8677-850a-3f76-0000-000000000000
+  name: URL Encode Request
+  class: org.apache.nifi.processors.attributes.UpdateAttribute
+  max concurrent tasks: 1
+  scheduling strategy: TIMER_DRIVEN
+  scheduling period: 0 sec
+  penalization period: 30 sec
+  yield period: 1 sec
+  run duration nanos: 0
+  auto-terminated relationships list: []
+  Properties:
+    Delete Attributes Expression:
+    Stateful Variables Initial Value:
+    Store State: Do not store state
+    X-AYLIEN-TextAPI-Application-ID: YOUR-APP-ID-HERE
+    X-AYLIEN-TextAPI-Application-Key: YOUR-APP-KEY-HERE
+    message: ${message.body.0:urlEncode()}
+Controller Services: []
+Process Groups: []
+Input Ports: []
+Output Ports: []
+Funnels: []
+Connections:
+- id: 563ef50e-066b-3cf7-0000-000000000000
+  name: Add Meta Tag/success/Call Sentiment API
+  source id: bf07c93f-5b9d-38e2-0000-000000000000
+  source relationship names:
+  - success
+  destination id: dd1145b2-ee4a-3c9a-0000-000000000000
+  max work queue size: 10000
+  max work queue data size: 1 GB
+  flowfile expiration: 0 sec
+  queue prioritizer class: ''
+- id: d86ab59c-e4c6-393f-0000-000000000000
+  name: Call Sentiment API/Failure/Respond to sender
+  source id: dd1145b2-ee4a-3c9a-0000-000000000000
+  source relationship names:
+  - Failure
+  destination id: c7678a7d-ebfb-382e-0000-000000000000
+  max work queue size: 10000
+  max work queue data size: 1 GB
+  flowfile expiration: 0 sec
+  queue prioritizer class: ''
+- id: d6569bf7-fbc3-3d62-0000-000000000000
+  name: Call Sentiment API/Response/Respond to sender
+  source id: dd1145b2-ee4a-3c9a-0000-000000000000
+  source relationship names:
+  - Response
+  destination id: c7678a7d-ebfb-382e-0000-000000000000
+  max work queue size: 10000
+  max work queue data size: 1 GB
+  flowfile expiration: 0 sec
+  queue prioritizer class: ''
+- id: 7bd399e3-b365-3cfd-0000-000000000000
+  name: Generate Pressure Readings/success/bab281c3-0168-1000-ffff-ffff9ae71f95
+  source id: 0a239f4f-d0f3-3c07-0000-000000000000
+  source relationship names:
+  - success
+  destination id: bab281c3-0168-1000-ffff-ffff9ae71f95
+  max work queue size: 10000
+  max work queue data size: 1 GB
+  flowfile expiration: 0 sec
+  queue prioritizer class: ''
+- id: f386fe65-dc45-3624-0000-000000000000
+  name: Generate Temp Readings/success/bab281c3-0168-1000-ffff-ffff9ae71f95
+  source id: 6fcd60bd-57a3-32a0-0000-000000000000
+  source relationship names:
+  - success
+  destination id: bab281c3-0168-1000-ffff-ffff9ae71f95
+  max work queue size: 10000
+  max work queue data size: 1 GB
+  flowfile expiration: 0 sec
+  queue prioritizer class: ''
+- id: cad3f5c2-daf6-30d3-0000-000000000000
+  name: Listen For Instructions/success/Promote Content To FF
+  source id: aba06206-e0d5-3ea8-0000-000000000000
+  source relationship names:
+  - success
+  destination id: c9b0afe7-6196-36f3-0000-000000000000
+  max work queue size: 10000
+  max work queue data size: 1 GB
+  flowfile expiration: 0 sec
+  queue prioritizer class: ''
+- id: ad2a357c-1702-30f9-0000-000000000000
+  name: Promote Content To FF/matched/URL Encode Request
+  source id: c9b0afe7-6196-36f3-0000-000000000000
+  source relationship names:
+  - matched
+  destination id: e62a8677-850a-3f76-0000-000000000000
+  max work queue size: 10000
+  max work queue data size: 1 GB
+  flowfile expiration: 0 sec
+  queue prioritizer class: ''
+- id: da665b78-22fe-38d7-0000-000000000000
+  name: Replace Content with URL Encoding/success/Add Meta Tag
+  source id: dcd3c494-63cf-375b-0000-000000000000
+  source relationship names:
+  - success
+  destination id: bf07c93f-5b9d-38e2-0000-000000000000
+  max work queue size: 10000
+  max work queue data size: 1 GB
+  flowfile expiration: 0 sec
+  queue prioritizer class: ''
+- id: 42b67251-4740-3420-0000-000000000000
+  name: URL Encode Request/success/Replace Content with URL Encoding
+  source id: e62a8677-850a-3f76-0000-000000000000
+  source relationship names:
+  - success
+  destination id: dcd3c494-63cf-375b-0000-000000000000
+  max work queue size: 10000
+  max work queue data size: 1 GB
+  flowfile expiration: 0 sec
+  queue prioritizer class: ''
+Remote Process Groups:
+- id: 73514909-618e-31cd-0000-000000000000
+  name: ''
+  url: http://YOUR-HOST-HERE:9090/nifi
+  comment: ''
+  timeout: 30 sec
+  yield period: 10 sec
+  transport protocol: RAW
+  proxy host: ''
+  proxy port: ''
+  proxy user: ''
+  proxy password: ''
+  local network interface: ''
+  Input Ports:
+  - id: bab281c3-0168-1000-ffff-ffff9ae71f95
+    name: Input Edge Data
+    comment: ''
+    max concurrent tasks: 1
+    use compression: false
+  Output Ports: []
+NiFi Properties Overrides: {}
